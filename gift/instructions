@@ -1,0 +1,14 @@
+Damaged Items: Gifts that are ordered are packed in gift boxes
+and shipped using a shipping box of m * n size(rows * columns),
+each gift box has a gift ID, that are starting from 1, 2, and
+so on. The gift boxes are arranged in the shipping box of m* n size.
+The gift boxes that are places in the four corners of the
+shipping box are highly prone to damage. The gift boxes are
+arranged sequentially.
+
+Sample Input / Output:
+7 6 5  output-> yes
+7 6 9  output-> no
+
+First two numbers are m & n values, the last number is the gift box ID
+if the gift box is prone to damage print “yes” else “no”.
