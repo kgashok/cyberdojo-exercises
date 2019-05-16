@@ -1,0 +1,5 @@
+PROBLEM 3 : NUMBERS HAVING EIGHT DIVISORS
+
+(Return the count of numbers from 1 to 1000 which are
+having exactly eight divisors)
+

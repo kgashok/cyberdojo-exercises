@@ -1,0 +1,14 @@
+## Statue Equalizing problems:
+
+There are n statues in n rooms, the problem is to arrange
+statues equally in rooms, the additional statues can be
+arranged in rooms after equalizing. The output is the count
+of no of steps taken to equalize the statues in rooms.
+
+### Sample Input / Output:
+`7 6 5 4 1 2 7 5` output -> 5
+`4 3 3 2 4` output -> 1
+
+The first number represents the no of rooms, and the other
+numbers represents the no of statues in each room.
+
