@@ -1,0 +1,9 @@
+JSON PARSING
+
+Print all the data from a Json String.
+
+Input : {'firstname' : 'abc'}
+Output : firstname -> abc
+
+
+
