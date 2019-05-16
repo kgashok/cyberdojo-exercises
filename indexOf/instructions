@@ -1,0 +1,33 @@
+FIRST THINGS FIRST: Update your KyG.id
+-----------
+
+"The fundamental string searching (matching) problem 
+is defined as follows: given two strings - a text and a pattern, 
+determine whether the pattern appears in the text. 
+The problem is also known as "the needle in a haystack problem." 
+http://buff.ly/1IHrGNK
+
+indexOf
+=======
+The function should take three arguments. 
+  The first one is the `text` and the other one is the string to
+  `pattern`. If `pattern` is available within `text`, then return 
+  the index at which it occurs.
+ 
+- If the third argument `first` is 1, then return the index
+of the first occurrence. Otherwise, return the index at which the
+last occurrence was matched.
+
+If `pattern` is not available, then return -1.
+
+### Example 
+- `"abcde", "ab"`   ->  `0`
+- `"abcdexy", "xy"` ->  `5`
+- `"abcde"`, `"12"` -> `-1`
+
+RELATED Links
+=============
+http://j.mp/cyberKG - video key for solving indexOf in CyberDojo
+
+Launch a new CyberDojo session for indexOf - 
+http://cyberdojo.kgfsl.com/forker/fork/2157E6?avatar=eagle&tag=7
