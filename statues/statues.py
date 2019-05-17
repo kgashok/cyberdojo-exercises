@@ -22,7 +22,7 @@ class Statues:
                 return False
         return True
 
-    def steps_required2(self, nlist):
+    def steps_required_legacy(self, nlist):
 
         no_of_rooms = nlist[0]
         slist       = nlist[1:]  # count of statues
