@@ -4,7 +4,7 @@ class Lift:
 
         desired = -1
         dist    = target  # assume no elevator and no stops
-        minimum  = dist - start
+        minimum = dist - start
 
         for stop_level in stop_list:
             dist = target - stop_level
