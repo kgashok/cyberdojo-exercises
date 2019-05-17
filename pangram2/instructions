@@ -1,0 +1,31 @@
+Pangram Checker
+A pangram is a sentence that uses every letter of the alphabet
+at least once. Given a sentence, check whether it is a pangram or not.
+
+Write a C/C++ program that returns true if the sentence is a pangram,
+otherwise returns false.
+
+Example
+
+“The quick brown fox jumps over the lazy dog.” -> true
+“abcdefghijklmnopqrstuvwxya” -> false.
+
+Input string sentence
+A string containing characters with their ASCII-codes in
+the range [32, 127].
+
+Output boolean
+true (int value 1) if sentence is a pangram,
+false (int value 0) otherwise.
+
+Partial Sequences
+If a string contains first occurrences of letters in either
+alphabetical or reverse alphabetical sequence, then, it is
+considered a partial perfect pangram.
+Return true for such sequences.
+
+Example
+“abba cab” -> true // first occurrences of characters are in
+alphabetical sequence
+“fed ceb” -> true // first occurrences of characters
+f, e, d, c and b appear in reverse alphabet sequence
