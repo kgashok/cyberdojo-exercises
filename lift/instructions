@@ -1,0 +1,21 @@
+In a mullti-storied shopping mall, sita wants to go to nth
+floor using the elevator, and the elevator stops only
+in three floors n1, n2, and n3. sita has to get
+down at the closest floor to the nth floor and climb up or down stairs.
+
+Sample Input / Output:
+10 4 8 15 output -> 8
+10 4 8 12 output -> 12
+
+The first number is the nth floor, the next three numbers
+are n1 n2 and n3.
+
+
+======
+Approach
+
+For
+10 4 10 15 output -> 10
+
+Loop through the floors, update the minimum of the difference
+between desired floor and stopped floor. Return the minimum.
