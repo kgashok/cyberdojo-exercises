@@ -1,0 +1,14 @@
+Find the Kth largest element in the Binary search tree.
+You may find it easier to progress if you break it down as follows:
+  
+1. Find the largest element in the BST
+
+2. Find the 2nd largest element in the BST
+
+3. Find the Kth largest element in the BST
+   - using recursion
+   - using counter and recursion
+   - using iterative mode
+   - using algorithm specified in inorder.idea
+
+
