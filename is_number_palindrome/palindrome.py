@@ -47,3 +47,18 @@ def is_number_palindrome(number):
         msd_mask //= 100
     
     return True
+
+# using a generator
+def is_number_palindrome(number):
+    
+    def generate_digits():
+        n = abs(number)
+        while n:
+            yield n % 10
+            n //= 10
+    
+    dlist = list(generate_digits())
+  
+    return all(dlist[i] == dlist[-i - 1] 
+               for i in range(len(dlist) // 2)
+              )
