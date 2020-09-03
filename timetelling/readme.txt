@@ -1,13 +1,3 @@
-<!-- title: CodeCraftsmanSaturdays Page -->
-
-# language
-[Python](https://cyberdojo1.kgisl.com/forker/fork/2DKSZc?avatar=vulture&tag=-1) or [C](https://cyberdojo1.kgisl.com/forker/fork/FZMFAH?avatar=dolphin&tag=-1) or [Java](https://cyberdojo1.kgisl.com/forker/fork/2DKSZc?avatar=spider&tag=-1) 
-
-# CCS - Sept 5 
-![teach](https://herdfoundationnagpur.files.wordpress.com/2014/09/happy-teachers-day-12.jpg)
-
-
-
 ## **What time is it?** 
 
 Imagine a vision enabled robot has to validate the time 
