@@ -29,15 +29,15 @@ class TestHarshad(unittest.TestCase):
         hc = harshad.Harshad()
         shc = harshad.StrongHarshad()
 
-        print ("Harshad Numbers---------")
+        print("Harshad Numbers---------")
         for i in range(10, 1001):
             if hc.check(i):
-                print (i, end=" ")
+                print(i, end=" ")
 
-        print ("\nStrong Harshad Numbers---------")
+        print("\nStrong Harshad Numbers---------")
         for i in range(10, 2001):
             if shc.check(i):
-                print (i, end=" ")
+                print(i, end=" ")
 
         self.assertTrue(True)
 

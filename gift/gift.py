@@ -1,9 +1,9 @@
 class Box:
 
-    def __init__(self, l, b):
-        self.length = l
-        self.breadth = b
-        self.size = l * b
+    def __init__(self, len, breadth):
+        self.length = len
+        self.breadth = breadth
+        self.size = len * breadth
 
         self.topLeft = 1
         self.topRight = self.breadth
@@ -24,14 +24,14 @@ class Box:
                     slist.append(loc_id)
                 loc_id += 1
 
-        print ("\nsafe_list for {0}x{0}: ".
-               format(self.length, self.breadth),
-               sorted(slist))
+        print("\nsafe_list for {0}x{0}: {0}".format_map(
+            self.length, self.breadth, sorted(slist))
+        )
         return slist
 
     def is_damaged(self, box_id):
         loc_id = box_id if box_id <= self.size else box_id % self.size
-        print ("checking box({0}) at loc_id:".format(box_id), loc_id)
+        print("checking box({0}) at loc_id:".format(box_id), loc_id)
         return "yes" if loc_id not in self.safe else "no"
 
     def corners_reinforced(self):

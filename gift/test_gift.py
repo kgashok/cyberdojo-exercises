@@ -26,7 +26,7 @@ class TestGift(unittest.TestCase):
         box_id = 7
         self.assertEqual("yes", gb.is_damaged(box_id))
 
-    def test_returns_True_for_5_for_7by6_box(self):
+    def test_returns_True_for_other_ids_for_7by6_box(self):
         gb = gift.Box(7, 6)
         box_id = 43
         self.assertEqual("yes", gb.is_damaged(box_id))

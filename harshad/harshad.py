@@ -4,6 +4,8 @@
 # Input: integer
 # Output: integer
 # Generates the sum of all the digits in the number
+
+
 def sum_digits(n):
     return sum(int(x) for x in str(n))
 
