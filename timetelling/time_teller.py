@@ -1,4 +1,4 @@
-from pprint import pprint
+# from pprint import pprint
 
 
 hourDB = {angle: angle // 30 for angle in range(0, 361, 1)}
