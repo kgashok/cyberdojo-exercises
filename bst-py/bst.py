@@ -2,7 +2,7 @@
 import math
 
 
-def bbst_helper(alist, low, high, root):
+def array_to_balanced_bst_helper(alist, low, high, root):
     if low > high:
         return root
 
@@ -10,15 +10,15 @@ def bbst_helper(alist, low, high, root):
 
     root = Node(alist[mid])
 
-    root.left = bbst_helper(alist, low, mid - 1, root.left)
-    root.right = bbst_helper(alist, mid + 1, high, root.right)
+    root.left = array_to_balanced_bst_helper(alist, low, mid - 1, root.left)
+    root.right = array_to_balanced_bst_helper(alist, mid + 1, high, root.right)
 
     return root
 
 
 def array_to_bbst(alist):
 
-    return bbst_helper(alist, 0, len(alist) - 1, None)
+    return array_to_balanced_bst_helper(alist, 0, len(alist) - 1, None)
 
 
 class Node():
@@ -28,11 +28,14 @@ class Node():
         self.right = None
         self.left = None
 
+    # if the preorder traversals are the same,
+    # then the BSTs are the same
     def __eq__(self, other):
         selfrep = self.preorder(self, [])
         otherrep = other.preorder(other, [])
         return selfrep == otherrep
 
+    # has to be a string object
     def __repr__(self):
         alist = []
         self.preorder(self, alist)
@@ -42,10 +45,8 @@ class Node():
         return self.__repr__()
 
     def preorder(self, node, alist):
-
         if not node:
             return alist
-
         alist.append(node.data)
         if node.left:
             self.preorder(node.left, alist)
