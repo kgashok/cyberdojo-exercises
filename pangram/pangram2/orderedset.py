@@ -3,6 +3,7 @@
 
 import collections
 
+
 class OrderedSet(collections.MutableSet):
 
     def __init__(self, iterable=None):

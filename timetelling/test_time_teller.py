@@ -41,4 +41,3 @@ def test_non_30_multiples_for_minutes(resource):
 def test_for_24_hour_time_telling(resource):
     hourDB, minuteDB = resource
     assert time_teller(460, 126, hourDB, minuteDB) == "3:21pm"
-

@@ -16,4 +16,4 @@ class Checker:
     def test_partial(self, pt):
 
         return letters.find(pt) >= 0 \
-               or letters.find(pt[::-1]) >= 0
+            or letters.find(pt[::-1]) >= 0
