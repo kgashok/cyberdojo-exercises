@@ -1,9 +1,9 @@
-from bst import array_to_bst, array_to_bbst, Node, is_valid
+from bst import array_to_bst, array_to_balanced_bst, Node, is_valid
 # import pytest
 
 
 def test_full_and_balanced_bst():
-    abbst = array_to_bbst([1, 2, 3, 4, 5, 6, 7])
+    abbst = array_to_balanced_bst([1, 2, 3, 4, 5, 6, 7])
     print(abbst)
 
 
@@ -15,7 +15,7 @@ def test_for_balanced_bst():
     head.right.right = Node(5)
     print(head)
 
-    abbst = array_to_bbst([1, 2, 3, 4, 5])
+    abbst = array_to_balanced_bst([1, 2, 3, 4, 5])
     print(abbst)
     assert abbst == head
 

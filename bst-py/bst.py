@@ -16,7 +16,7 @@ def array_to_balanced_bst_helper(alist, low, high, root):
     return root
 
 
-def array_to_bbst(alist):
+def array_to_balanced_bst(alist):
 
     return array_to_balanced_bst_helper(alist, 0, len(alist) - 1, None)
 
