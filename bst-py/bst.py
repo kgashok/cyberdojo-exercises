@@ -10,15 +10,15 @@ def bbst_helper(alist, low, high, root):
 
     root = Node(alist[mid])
 
-    root.left = bbst_helper(alist, low, mid-1, root.left)
-    root.right = bbst_helper(alist, mid+1, high, root.right)
+    root.left = bbst_helper(alist, low, mid - 1, root.left)
+    root.right = bbst_helper(alist, mid + 1, high, root.right)
 
     return root
 
 
 def array_to_bbst(alist):
 
-    return bbst_helper(alist, 0, len(alist)-1, None)
+    return bbst_helper(alist, 0, len(alist) - 1, None)
 
 
 class Node():
@@ -60,8 +60,8 @@ def is_valid_helper(node, mini, maxi):
 
     if not (mini <= node.data <= maxi):
         return False
-    return is_valid_helper(node.left, mini, node.data-1) and \
-        is_valid_helper(node.right, node.data+1, maxi)
+    return is_valid_helper(node.left, mini, node.data - 1) and \
+        is_valid_helper(node.right, node.data + 1, maxi)
 
 
 def is_valid(node):
