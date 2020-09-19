@@ -71,7 +71,6 @@ class Node:
 
         return alist
 
-
     def insert(self, node):
         # determine the parent who will
         # take on the new node as child
