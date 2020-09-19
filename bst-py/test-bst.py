@@ -13,7 +13,6 @@ def test_with_a_large_array():
     nlist = list(range(10))
 
 
-
 def test_with_simple_sorted_array():
 
     head = Node(1)
