@@ -8,18 +8,25 @@ def test_with_array_to_balanced_bst():
     ctree = array_to_balanced_bst(nlist)
 
     assert preorder(ctree, []) == [4, 2, 1, 3, 6, 5, 7]
-<<<<<<< HEAD
-    assert is_valid_bst(ctree)
-    
-def test_with_a_large_array(): 
-=======
+
+
+<< << << < HEAD
+assert is_valid_bst(ctree)
 
 
 def test_with_a_large_array():
->>>>>>> aac1b18eb13f8046e41700ee99c50a57943f29cd
-    nlist = list(range(10))
 
-    print(array_to_bst(nlist))
+
+== == == =
+
+
+def test_with_a_large_array():
+
+
+>>>>>> > aac1b18eb13f8046e41700ee99c50a57943f29cd
+nlist = list(range(10))
+
+print(array_to_bst(nlist))
 
 
 def test_with_simple_sorted_array():
