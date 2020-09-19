@@ -7,7 +7,7 @@ def test_with_array_to_balanced_bst():
     ctree = array_to_balanced_bst(nlist)
     
     assert preorder(ctree, []) == [4, 2, 1, 3, 6, 5, 7]
-    
+    assert is_valid_bst(ctree)
     
 def test_with_a_large_array(): 
     nlist = list(range(10))
