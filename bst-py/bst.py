@@ -13,20 +13,15 @@ def array_to_balanced_bst(alist):
     return head
 
 
-def is_valid_helper(node, mini, maxi):
+def is_valid_bst(node, mini=-math.inf, maxi=math.inf):
     if not node:
         return True
 
     if not (mini <= node.data <= maxi):
         return False
 
-    return is_valid_helper(node.left, mini, node.data - 1) and is_valid_helper(
-        node.right, node.data + 1, maxi
-    )
-
-
-def is_valid_bst(node):
-    return is_valid_helper(node, -math.inf, math.inf)
+    return is_valid_bst(node.left, mini, node.data - 1) and \
+        is_valid_bst(node.right, node.data + 1, maxi)
 
 
 # return a list containing values of the pre order traversals
@@ -56,18 +51,17 @@ class Node:
         self.right = None
         self.left = None
 
-    # Two trees are said to be equivalent if
-    #   - the preorder traversals outputs are equal to
-    #     each other
+    # Two trees are equivalent if
+    # the preorder traversals outputs are equal 
     def __eq__(self, other):
-        selforder = preorder(self, [])
-        otherorder = preorder(other, [])
-        # print(selforder, otherorder)
-        return selforder == otherorder
+        self_order = preorder(self, [])
+        other_order = preorder(other, [])
+        # print(self_order, othe_rorder)
+        return self_order == other_order
 
-        # Returns the preorder traveral values in the tree as a list
-        # Refer https://bit.ly/strRepr
-        # def __repr__(self):
+    # Returns the preorder traveral values in the tree as a list
+    # Refer https://bit.ly/strRepr
+    def __repr__(self):
         alist = preorder(self, [])
         return alist.__str__()
 
