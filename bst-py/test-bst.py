@@ -1,3 +1,4 @@
+from random import shuffle
 from bst import *
 import pytest
 
@@ -13,12 +14,11 @@ def test_with_array_to_balanced_bst():
     assert preorderval == [4, 2, 1, 3, 6, 5, 7]
 
 
-from random import shuffle
 def test_with_a_large_array():
     nlist = list(range(-5, 5))
     shuffle(nlist)
     print(nlist)
-        
+
     ctree = array_to_bst(nlist)
     print("BST", ctree)
     cbtree = array_to_balanced_bst(nlist)
@@ -58,4 +58,3 @@ def test_with_descending_values():
     assert is_valid_bst(ctree)
 
     assert ctree == head
-    

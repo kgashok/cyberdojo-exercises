@@ -81,4 +81,3 @@ class Node:
             parent.left = node
         else:
             parent.right = node
-            
