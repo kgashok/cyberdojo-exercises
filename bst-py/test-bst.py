@@ -6,13 +6,23 @@ def test_with_array_to_balanced_bst():
     nlist = list(range(1, 8))
 
     ctree = array_to_balanced_bst(nlist)
-
-    assert ctree.preorder([]) == [4, 2, 1, 3, 6, 5, 7]
     assert is_valid_bst(ctree)
 
+    preorderval = []
+    ctree.preorder(preorderval)
+    assert preorderval == [4, 2, 1, 3, 6, 5, 7]
 
+
+from random import shuffle
 def test_with_a_large_array():
-    nlist = list(range(10))
+    nlist = list(range(-5, 5))
+    shuffle(nlist)
+    print(nlist)
+        
+    ctree = array_to_bst(nlist)
+    print("BST", ctree)
+    cbtree = array_to_balanced_bst(nlist)
+    print("balanced BST", cbtree)
 
 
 def test_with_simple_sorted_array():
@@ -48,3 +58,4 @@ def test_with_descending_values():
     assert is_valid_bst(ctree)
 
     assert ctree == head
+    

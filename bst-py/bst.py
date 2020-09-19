@@ -3,6 +3,7 @@ import math
 
 def array_to_balanced_bst(alist):
     # divide and conquer
+    alist.sort()
     if not alist:
         return
     mid = len(alist) // 2
@@ -48,16 +49,10 @@ class Node:
         # print(self_order, othe_rorder)
         return self_order == other_order
 
-    # Returns the preorder traveral values in the tree as a list
-    # Refer https://bit.ly/strRepr
-    def __repr__(self):
-        alist = self.preorder([])
-        return alist.__str__()
-
     # returns the string equivalent of the __repr__() function
     # Refer https://bit.ly/strRepr
     def __str__(self):
-        return self.__repr__()
+        return self.preorder([]).__str__()
 
     # return a list containing values of the pre order traversals
     def preorder(self, alist):
@@ -86,3 +81,4 @@ class Node:
             parent.left = node
         else:
             parent.right = node
+            
