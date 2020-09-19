@@ -1,58 +1,16 @@
-
 import math
 
 
-def array_to_balanced_bst_helper(alist, low, high, root):
-    if low > high:
-        return root
-
-    mid = low + (high - low) // 2
-
-    root = Node(alist[mid])
-
-    root.left = array_to_balanced_bst_helper(alist, low, mid - 1, root.left)
-    root.right = array_to_balanced_bst_helper(alist, mid + 1, high, root.right)
-
-    return root
-
-
 def array_to_balanced_bst(alist):
+    # divide and conquer
+    if not alist:
+        return
+    mid = len(alist) // 2
+    head = Node(alist[mid])
+    head.left = array_to_balanced_bst(alist[:mid])
+    head.right = array_to_balanced_bst(alist[mid + 1:])
 
-    return array_to_balanced_bst_helper(alist, 0, len(alist) - 1, None)
-
-
-class Node():
-
-    def __init__(self, val):
-        self.data = val
-        self.right = None
-        self.left = None
-
-    # if the preorder traversals are the same,
-    # then the BSTs are the same
-    def __eq__(self, other):
-        selfrep = self.preorder(self, [])
-        otherrep = other.preorder(other, [])
-        return selfrep == otherrep
-
-    # has to be a string object
-    def __repr__(self):
-        alist = []
-        self.preorder(self, alist)
-        return alist.__str__()
-
-    def __str__(self):
-        return self.__repr__()
-
-    def preorder(self, node, alist):
-        if not node:
-            return alist
-        alist.append(node.data)
-        if node.left:
-            self.preorder(node.left, alist)
-        if node.right:
-            self.preorder(node.right, alist)
-        return alist
+    return head
 
 
 def is_valid_helper(node, mini, maxi):
@@ -61,33 +19,75 @@ def is_valid_helper(node, mini, maxi):
 
     if not (mini <= node.data <= maxi):
         return False
-    return is_valid_helper(node.left, mini, node.data - 1) and \
-        is_valid_helper(node.right, node.data + 1, maxi)
+
+    return is_valid_helper(node.left, mini, node.data - 1) and is_valid_helper(
+        node.right, node.data + 1, maxi
+    )
 
 
-def is_valid(node):
+def is_valid_bst(node):
     return is_valid_helper(node, -math.inf, math.inf)
 
 
+# return a list containing values of the pre order traversals
+def preorder(node, alist):
+    if not node:
+        return alist
+    alist.append(node.data)
+    preorder(node.left, alist)
+    preorder(node.right, alist)
+
+    return alist
+
+
 def array_to_bst(alist):
-    if not alist:
-        return Node(None)
 
     head = Node(alist[0])
-    node = head
-    for i, e in enumerate(alist[1:]):
-        parent = None
-        while node:
-            parent = node
-            if e < node.data:
-                node = node.left
-            else:
-                node = node.right
-        if e < parent.data:
-            parent.left = Node(e)
-        else:
-            parent.right = Node(e)
-
-        node = head
+    for number in alist[1:]:
+        node = Node(number)
+        head.insert(node)
 
     return head
+
+
+class Node:
+    def __init__(self, val):
+        self.data = val
+        self.right = None
+        self.left = None
+
+    # Two trees are said to be equivalent if
+    #   - the preorder traversals outputs are equal to
+    #     each other
+    def __eq__(self, other):
+        selforder = preorder(self, [])
+        otherorder = preorder(other, [])
+        # print(selforder, otherorder)
+        return selforder == otherorder
+
+        # Returns the preorder traveral values in the tree as a list
+        # Refer https://bit.ly/strRepr
+        # def __repr__(self):
+        alist = preorder(self, [])
+        return alist.__str__()
+
+    # returns the string equivalent of the __repr__() function
+    # Refer https://bit.ly/strRepr
+    def __str__(self):
+        return self.__repr__()
+
+    def insert(self, node):
+        # determine the parent who will
+        # take on the new node as child
+        n = self
+        while n:
+            parent = n
+            if node.data < n.data:
+                n = n.left
+            else:
+                n = n.right
+
+        if node.data < parent.data:
+            parent.left = node
+        else:
+            parent.right = node
