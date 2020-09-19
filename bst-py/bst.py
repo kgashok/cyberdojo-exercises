@@ -24,17 +24,6 @@ def is_valid_bst(node, mini=-math.inf, maxi=math.inf):
         is_valid_bst(node.right, node.data + 1, maxi)
 
 
-# return a list containing values of the pre order traversals
-def preorder(node, alist):
-    if not node:
-        return alist
-    alist.append(node.data)
-    preorder(node.left, alist)
-    preorder(node.right, alist)
-
-    return alist
-
-
 def array_to_bst(alist):
 
     head = Node(alist[0])
@@ -54,21 +43,34 @@ class Node:
     # Two trees are equivalent if
     # the preorder traversals outputs are equal
     def __eq__(self, other):
-        self_order = preorder(self, [])
-        other_order = preorder(other, [])
+        self_order = self.preorder([])
+        other_order = other.preorder([])
         # print(self_order, othe_rorder)
         return self_order == other_order
 
     # Returns the preorder traveral values in the tree as a list
     # Refer https://bit.ly/strRepr
     def __repr__(self):
-        alist = preorder(self, [])
+        alist = self.preorder([])
         return alist.__str__()
 
     # returns the string equivalent of the __repr__() function
     # Refer https://bit.ly/strRepr
     def __str__(self):
         return self.__repr__()
+
+    # return a list containing values of the pre order traversals
+    def preorder(self, alist):
+        if not self:
+            return alist
+        alist.append(self.data)
+        if self.left:
+            self.left.preorder(alist)
+        if self.right:
+            self.right.preorder(alist)
+
+        return alist
+
 
     def insert(self, node):
         # determine the parent who will
