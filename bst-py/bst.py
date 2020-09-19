@@ -52,7 +52,7 @@ class Node:
         self.left = None
 
     # Two trees are equivalent if
-    # the preorder traversals outputs are equal 
+    # the preorder traversals outputs are equal
     def __eq__(self, other):
         self_order = preorder(self, [])
         other_order = preorder(other, [])
