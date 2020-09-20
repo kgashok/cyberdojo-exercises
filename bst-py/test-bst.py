@@ -1,9 +1,10 @@
 from random import shuffle
-from bst import *
+from bst import array_to_balanced_bst, array_to_bst, is_valid_bst, Node
 import pytest
 
 
 def test_with_array_to_balanced_bst():
+    """ """
     nlist = list(range(1, 8))
 
     ctree = array_to_balanced_bst(nlist)
@@ -15,9 +16,10 @@ def test_with_array_to_balanced_bst():
 
 
 def test_with_a_large_array():
+    """ """
     nlist = list(range(-5, 5))
     shuffle(nlist)
-    print(nlist)
+    print("input array:", nlist)
 
     ctree = array_to_bst(nlist)
     print("BST", ctree)
@@ -26,6 +28,7 @@ def test_with_a_large_array():
 
 
 def test_with_simple_sorted_array():
+    """ """
 
     head = Node(1)
     head.right = Node(2)
@@ -36,6 +39,7 @@ def test_with_simple_sorted_array():
 
 # @pytest.mark.skip
 def test_with_simple_sorted_array_additional():
+    """ """
 
     head = Node(10)
     head.right = Node(20)
@@ -47,6 +51,7 @@ def test_with_simple_sorted_array_additional():
 
 
 def test_with_descending_values():
+    """ """
 
     head = Node(4)
     head.left = Node(3)
