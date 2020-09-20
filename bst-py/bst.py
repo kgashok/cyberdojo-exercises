@@ -103,4 +103,3 @@ def array_to_bst(alist: list):
         root.insert(node)
 
     return root
-
