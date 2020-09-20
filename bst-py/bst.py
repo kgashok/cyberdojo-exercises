@@ -2,8 +2,7 @@ import math
 
 
 def array_to_balanced_bst(alist):
-    # divide and conquer
-    alist.sort()
+    alist.sort()  # just to make sure it is sorted!
     if not alist:
         return
     mid = len(alist) // 2
@@ -17,16 +16,13 @@ def array_to_balanced_bst(alist):
 def is_valid_bst(node, mini=-math.inf, maxi=math.inf):
     if not node:
         return True
-
     if not (mini <= node.data <= maxi):
         return False
-
     return is_valid_bst(node.left, mini, node.data - 1) and \
         is_valid_bst(node.right, node.data + 1, maxi)
 
 
 def array_to_bst(alist):
-
     head = Node(alist[0])
     for number in alist[1:]:
         node = Node(number)
