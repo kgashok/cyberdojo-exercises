@@ -1,36 +1,6 @@
 import math
 
 
-def array_to_balanced_bst(alist):
-    alist.sort()  # just to make sure it is sorted!
-    if not alist:
-        return
-    mid = len(alist) // 2
-    head = Node(alist[mid])
-    head.left = array_to_balanced_bst(alist[:mid])
-    head.right = array_to_balanced_bst(alist[mid + 1:])
-
-    return head
-
-
-def is_valid_bst(node, mini=-math.inf, maxi=math.inf):
-    if not node:
-        return True
-    if not (mini <= node.data <= maxi):
-        return False
-    return is_valid_bst(node.left, mini, node.data - 1) and \
-        is_valid_bst(node.right, node.data + 1, maxi)
-
-
-def array_to_bst(alist):
-    head = Node(alist[0])
-    for number in alist[1:]:
-        node = Node(number)
-        head.insert(node)
-
-    return head
-
-
 class Node:
     def __init__(self, val):
         self.data = val
@@ -77,3 +47,60 @@ class Node:
             parent.left = node
         else:
             parent.right = node
+
+
+def array_to_balanced_bst(alist):
+    """returns a valid BST containing numbers of a sorted array
+
+    Args:
+        alist (list): sorted array containing numbers
+
+    Returns:
+        (Node): root node of the constructed balanced BST
+    """
+    alist.sort()  # just to make sure it is sorted!
+    if not alist:
+        return
+    mid = len(alist) // 2
+    root = Node(alist[mid])
+    root.left = array_to_balanced_bst(alist[:mid])
+    root.right = array_to_balanced_bst(alist[mid + 1:])
+
+    return root
+
+
+def is_valid_bst(node: Node, mini: int = -math.inf, maxi: int = math.inf):
+    """checks whether a tree is a valid binary search tree
+
+    Args:
+        node (Node): root
+        mini (int, optional): [description]. Defaults to -math.inf.
+        maxi (int, optional): [description]. Defaults to math.inf.
+
+    Returns:
+        boolean: return True if valid BST, otherwise False
+    """
+    if not node:
+        return True
+    if not (mini <= node.data <= maxi):
+        return False
+    return is_valid_bst(node.left, mini, node.data - 1) and \
+        is_valid_bst(node.right, node.data + 1, maxi)
+
+
+def array_to_bst(alist: list):
+    """returns a valid BST containing numbers in the list (aka array)
+
+    Args:
+        alist (list): containing list of numbers
+
+    Returns:
+        Node: root node of the constructed BST
+    """
+    root = Node(alist[0])
+    for number in alist[1:]:
+        node = Node(number)
+        root.insert(node)
+
+    return root
+
