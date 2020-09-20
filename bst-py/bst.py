@@ -4,6 +4,7 @@ import math
 class Node:
     """Node object used in a binary search tree
     """
+
     def __init__(self, val: int):
         """constructor function
 
