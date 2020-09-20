@@ -2,7 +2,15 @@ import math
 
 
 class Node:
-    def __init__(self, val):
+    """Node object used in a binary search tree
+    """
+    def __init__(self, val: int):
+        """constructor function
+
+        Args:
+            self (Node): this object
+            val (int): data to be held in Node Object
+        """
         self.data = val
         self.right = None
         self.left = None
@@ -10,6 +18,15 @@ class Node:
     # Two trees are equivalent if
     # the preorder traversals outputs are equal
     def __eq__(self, other):
+        """check for equivalance between two binary trees
+
+        Args:
+            self (Node): this object
+            other (Node): root node of BST to compare with
+
+        Returns:
+            boolean: returns True if both are equivalent
+        """
         self_order = self.preorder([])
         other_order = other.preorder([])
         # print(self_order, othe_rorder)
