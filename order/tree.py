@@ -28,38 +28,35 @@ def printq(q):
         
 def boustrophedon_order(root):
 
-    node = root 
-    queue = [root]
+    def build_using(first, second):
+        if first: 
+            res.append(first.data)
+            queue.append(first)
+        if second:
+            res.append(second.data)
+            queue.append(second)
+            
     res = [root.data]
+    queue = [root]
     right_to_left = True
-    nodec = 0
+    node_count = 0
     power2 = 2
     while queue:
         #printq(queue)
         node = queue.pop(0)
         if right_to_left:
-            if node.right:
-                res.append(node.right.data)
-                queue.append(node.right)
-            if node.left:
-                res.append(node.left.data)
-                queue.append(node.left)
+            build_using(node.right, node.left)           
         else:
-            if node.left:
-                res.append(node.left.data)
-                queue.append(node.left)
-            if node.right:
-                res.append(node.right.data)
-                queue.append(node.right)
+            build_using(node.left, node.right)
             
-        nodec += 2
-        if nodec == power2:
-            print("res", res, "nodec", nodec)
+        node_count += 2
+        if node_count == power2:
+            print("res", res, "nodec", node_count)
             right_to_left = not right_to_left
+            node_count = 0
+            power2 <<= 1
             queue.reverse()
-            nodec = 0
-            power2 *= 2
-        
+            
     return res
     
 def array_to_balanced_bst(alist):
