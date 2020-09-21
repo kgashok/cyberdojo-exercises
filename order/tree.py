@@ -1,15 +1,16 @@
 class Node():
     """ """
+
     def __init__(self, val):
         self.data = val
         self.right = None
         self.left = None
-    
+
     # returns the string equivalent of the __repr__() function
     # Refer https://bit.ly/strRepr
     def __str__(self):
         return self.preorder([]).__str__()
-    
+
     # return a list containing values of the pre order traversals
     def preorder(self, alist):
         """
@@ -27,16 +28,18 @@ class Node():
 
         return alist
 
+
 def printq(q):
     """
 
     :param q: 
 
     """
-    for e in q: 
+    for e in q:
         print(e)
     print("\n---\n")
-        
+
+
 def boustrophedon_order(root):
     """
 
@@ -52,13 +55,13 @@ def boustrophedon_order(root):
         """
         return (x & (x - 1)) == 0
 
-    node = root 
+    node = root
     queue = [root]
     res = [root.data]
     right_to_left = True
     nodec = 0
     while queue:
-        #printq(queue)
+        # printq(queue)
         node = queue.pop(0)
         if right_to_left:
             if node.right:
@@ -76,14 +79,15 @@ def boustrophedon_order(root):
                 res.append(node.right.data)
                 queue.append(node.right)
             print("res", res)
-        
+
         if is_power_of_2(nodec):
             right_to_left = not right_to_left
             queue.reverse()
         nodec += 2
-        
+
     return res
-    
+
+
 def array_to_balanced_bst(alist):
     """
 
