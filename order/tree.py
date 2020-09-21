@@ -1,5 +1,4 @@
 class Node():
-    """ """
     def __init__(self, val):
         self.data = val
         self.right = None
@@ -12,11 +11,6 @@ class Node():
     
     # return a list containing values of the pre order traversals
     def preorder(self, alist):
-        """
-
-        :param alist: 
-
-        """
         if not self:
             return alist
         alist.append(self.data)
@@ -28,35 +22,18 @@ class Node():
         return alist
 
 def printq(q):
-    """
-
-    :param q: 
-
-    """
     for e in q: 
         print(e)
     print("\n---\n")
         
 def boustrophedon_order(root):
-    """
-
-    :param root: 
-
-    """
-
-    def is_power_of_2(x):
-        """
-
-        :param x: 
-
-        """
-        return (x & (x - 1)) == 0
 
     node = root 
     queue = [root]
     res = [root.data]
     right_to_left = True
     nodec = 0
+    power2 = 2
     while queue:
         #printq(queue)
         node = queue.pop(0)
@@ -67,7 +44,6 @@ def boustrophedon_order(root):
             if node.left:
                 res.append(node.left.data)
                 queue.append(node.left)
-            print("res", res)
         else:
             if node.left:
                 res.append(node.left.data)
@@ -75,21 +51,18 @@ def boustrophedon_order(root):
             if node.right:
                 res.append(node.right.data)
                 queue.append(node.right)
-            print("res", res)
-        
-        if is_power_of_2(nodec):
+            
+        nodec += 2
+        if nodec == power2:
+            print("res", res, "nodec", nodec)
             right_to_left = not right_to_left
             queue.reverse()
-        nodec += 2
+            nodec = 0
+            power2 *= 2
         
     return res
     
 def array_to_balanced_bst(alist):
-    """
-
-    :param alist: 
-
-    """
     # divide and conquer
     alist.sort()
     if not alist:

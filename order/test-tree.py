@@ -18,4 +18,11 @@ def test_with_height_of_three():
     assert boustrophedon_order(ctree) == [4, 6, 2, 1, 3, 5, 7]
     
 def test_with_random_tree():
-    pass
+    alist = list(range(16))
+    ctree = array_to_balanced_bst(alist)
+    print(ctree.preorder([]))
+    
+    bo = boustrophedon_order(ctree)
+    
+    assert bo == [8, 12, 4, 2, 6, 10, 14, 15, 13, 11, 9, 7, 5, 3, 1, 0]
+    
