@@ -3,12 +3,12 @@ class Node():
         self.data = val
         self.right = None
         self.left = None
-    
+
     # returns the string equivalent of the __repr__() function
     # Refer https://bit.ly/strRepr
     def __str__(self):
         return self.preorder([]).__str__()
-    
+
     # return a list containing values of the pre order traversals
     def preorder(self, alist):
         if not self:
@@ -21,11 +21,13 @@ class Node():
 
         return alist
 
+
 def printq(q):
-    for e in q: 
+    for e in q:
         print(e)
     print("\n---\n")
-        
+
+
 def boustrophedon_order(root):
 
     def build_using(first, second):
@@ -42,7 +44,7 @@ def boustrophedon_order(root):
     node_count = 0
     power2 = 2
     while queue:
-        #printq(queue)
+        # printq(queue)
         node = queue.pop(0)
         if right_to_left:
             build_using(node.right, node.left)           
@@ -56,9 +58,10 @@ def boustrophedon_order(root):
             node_count = 0
             power2 <<= 1
             queue.reverse()
-            
+ 
     return res
-    
+
+
 def array_to_balanced_bst(alist):
     # divide and conquer
     alist.sort()

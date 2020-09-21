@@ -23,8 +23,7 @@ def test_with_random_tree():
     alist = list(range(16))
     ctree = array_to_balanced_bst(alist)
     print(ctree.preorder([]))
-    
+
     bo = boustrophedon_order(ctree)
-    
+
     assert bo == [8, 12, 4, 2, 6, 10, 14, 15, 13, 11, 9, 7, 5, 3, 1, 0]
-    
