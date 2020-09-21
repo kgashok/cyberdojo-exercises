@@ -31,7 +31,7 @@ def printq(q):
 def boustrophedon_order(root):
 
     def build_using(node):
-        try: 
+        try:
             if right_to_left:
                 res.append(node.right.data)
                 res.append(node.left.data)
@@ -44,17 +44,17 @@ def boustrophedon_order(root):
                 queue.append(node.right)
         except:
             pass
-        
+
     res = [root.data]
     queue = [root]
     right_to_left = True
     node_count = 0
     power2 = 2
     while queue:
-        #printq(queue)
+        # printq(queue)
         node = queue.pop(0)
         build_using(node)
-        
+
         node_count += 2
         if node_count == power2:
             print("inter", res, "nodec", node_count)
@@ -62,7 +62,7 @@ def boustrophedon_order(root):
             node_count = 0
             power2 <<= 1
             queue.reverse()
-            
+
     return res
 
 
