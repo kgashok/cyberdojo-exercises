@@ -30,25 +30,22 @@ def printq(q):
 
 def boustrophedon_order(root):
 
-    def build_using(node):
-        if right_to_left:
-            res.append(node.right.data)
-            res.append(node.left.data)
-            queue.append(node.right)
-            queue.append(node.left)
-        else:
-            res.append(node.left.data)
-            res.append(node.right.data)
-            queue.append(node.left)
-            queue.append(node.right)
-      
     res = [root.data]
     queue = [root]
     right_to_left, node_count, power2 = True, 0, 2
     while queue:
         node = queue.pop(0)
         try:
-            build_using(node)
+            if right_to_left:
+                res.append(node.right.data)
+                res.append(node.left.data)
+                queue.append(node.right)
+                queue.append(node.left)
+            else:
+                res.append(node.left.data)
+                res.append(node.right.data)
+                queue.append(node.left)
+                queue.append(node.right)      
         except AttributeError:
             pass
 
@@ -59,7 +56,6 @@ def boustrophedon_order(root):
             node_count = 0
             power2 <<= 1
             queue.reverse()
-
     return res
 
 
