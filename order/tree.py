@@ -59,7 +59,7 @@ def boustrophedon_order(root):
             node_count = 0
             power2 <<= 1
             queue.reverse()
-            
+
     return res
 
 
