@@ -29,7 +29,6 @@ def printq(q):
 
 
 def boustrophedon_order(root):
-
     res = [root.data]
     queue = [root]
     right_to_left, node_count, power2 = True, 0, 2
