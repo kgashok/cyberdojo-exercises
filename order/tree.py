@@ -44,7 +44,7 @@ def boustrophedon_order(root):
                 res.append(node.left.data)
                 res.append(node.right.data)
                 queue.append(node.left)
-                queue.append(node.right)      
+                queue.append(node.right)
         except AttributeError:
             pass
 
