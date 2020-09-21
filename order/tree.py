@@ -41,7 +41,7 @@ def boustrophedon_order(root):
             res.append(node.right.data)
             queue.append(node.left)
             queue.append(node.right)
-      
+
     res = [root.data]
     queue = [root]
     right_to_left, node_count, power2 = True, 0, 2
