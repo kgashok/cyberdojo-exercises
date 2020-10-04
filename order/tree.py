@@ -35,7 +35,6 @@ def boustrophedon_order(root):
         node = queue.pop(0)
         if node:
             boustro.append(node.data)
-
             if right_to_left:
                 queue.extend([node.right, node.left])
             else:
@@ -43,8 +42,8 @@ def boustrophedon_order(root):
 
         node_count += 2
         if node_count == power2:
-            right_to_left = not right_to_left
             queue.reverse()
+            right_to_left = not right_to_left
             node_count = 0
             power2 = power2 * 2
 
