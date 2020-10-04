@@ -3,13 +3,13 @@ class Node():
         self.data = val
         self.right = None
         self.left = None
-
+    
     # returns the string equivalent of the __repr__() function
     # Refer https://bit.ly/strRepr
     def __str__(self):
         return self.preorder([]).__str__()
-
-    # return a list containing values of the pre order traversals
+    
+    # return a list containing values of the pre order traversal
     def preorder(self, alist):
         if not self:
             return alist
@@ -21,51 +21,72 @@ class Node():
 
         return alist
 
+def boustrophedon_order(root):
+    print(root)
+    
+    queue = [root]
+    boustro = []
+    right_to_left = False
+    node_count = 0
+    power2 = 2 
+    
+    while queue: 
+        node = queue.pop(0)
+        if node: 
+            boustro.append(node.data)
+            
+            if right_to_left:
+                queue.extend([node.right, node.left])
+            else: 
+                queue.extend([node.left, node.right])
+        
+        node_count += 2
+        if node_count == power2: 
+            right_to_left = not right_to_left
+            queue.reverse()
+            node_count = 0 
+            power2 = power2 * 2 
+ 
 
-def printq(q):
-    for e in q:
-        print(e)
-    print("\n---\n")
-
+    print(boustro)
+    return boustro
 
 def boustrophedon_order(root):
-    res = [root.data]
-    queue = [root]
-    right_to_left, node_count, power2 = True, 0, 2
-    while queue:
-        node = queue.pop(0)
-        try:
-            if right_to_left:
-                res.append(node.right.data)
-                res.append(node.left.data)
-                queue.append(node.right)
-                queue.append(node.left)
-            else:
-                res.append(node.left.data)
-                res.append(node.right.data)
-                queue.append(node.left)
-                queue.append(node.right)
-        except AttributeError:
-            pass
+    level = []  # intermediary level values
+    result = [] # accumulates values for all levels
+    q = [root] 
+    levelnum = 1
+ 
+    while q: 
+        count = len(q)
+        while count: 
+            node = q.pop(0) 
+            if node:
+                level.append(node.data) 
+                q.extend([node.left, node.right])
+            count -= 1
 
-        node_count += 2
-        if node_count == power2:
-            print("inter", res, "nodec", node_count)
-            right_to_left = not right_to_left
-            node_count = 0
-            power2 <<= 1
-            queue.reverse()
+        result = result + (level if levelnum%2 else level[::-1])
+        level.clear()
+        levelnum += 1
+        
+    return result
+
+
+def level_order(root): 
+
+    queue = [root]
+    res = [] 
+    
+    while queue: 
+        node = queue.pop(0)
+        
+        if node: 
+            res.append(node.data)
+      
+            queue.extend([node.left, node.right])
+
+
+    print(res)
     return res
 
-
-def array_to_balanced_bst(alist):
-    # divide and conquer
-    alist.sort()
-    if not alist:
-        return
-    mid = len(alist) // 2
-    root = Node(alist[mid])
-    root.left = array_to_balanced_bst(alist[:mid])
-    root.right = array_to_balanced_bst(alist[mid + 1:])
-
-    return root
