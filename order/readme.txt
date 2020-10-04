@@ -16,3 +16,19 @@ For example, given the following tree:
 
 You should return [1, 3, 2, 4, 5, 6, 7].
 
+
+---
+
+- How to simplify the problem? 
+- Go from Known To Unknown? 
+   - Level Order before we do Boustro ( ITERATIVE)
+       - BREADTH FIRST 
+         - queue (list) 
+            - q.pop(0) -> deque
+            - q.append(elem) -> enqueue
+       
+   -  compared to preorder, postorder, inorder (DEPTH FIRST) 
+       - normally you use recursion 
+          - stack
+          
+          
