@@ -1,7 +1,7 @@
 def has_fixed(alst):
     """
 
-    :param alst: 
+    :param alst:
 
     """
     maxindex = len(alst) - 1
@@ -17,8 +17,8 @@ def has_fixed(alst):
 def bin_search(alst, op):
     """
 
-    :param alst: 
-    :param op: 
+    :param alst:
+    :param op:
 
     """
     high = len(alst)-1
@@ -48,7 +48,7 @@ def bin_search(alst, op):
 def has_fixed(alst):
     """
 
-    :param alst: 
+    :param alst:
 
     """
     res = bin_search(alst, "lt")

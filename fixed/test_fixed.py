@@ -10,7 +10,7 @@ def test_for_fixed_point():
 # @pytest.mark.skip
 def test_for_absence_of_fixed_point():
     """ """
-    assert has_fixed([1, 5, 7, 8]) == False
+    assert has_fixed([1, 5, 7, 8]) is False
 
 
 def test_for_boundary_cases():
@@ -24,7 +24,7 @@ def test_for_efficiency_of_approach():
     """ """
 
     million = range(1, 1_000_000)
-    assert has_fixed(million) == False
+    assert has_fixed(million) is False
 
 # @pytest.mark.skip
 
@@ -46,12 +46,12 @@ def test_for_ten_million_plus_edge_case():
     million10 = list(range(1, 16_000_000))
     million10_plus = million10 + [15_999_999]
 
-    #zipl = list(enumerate(million10_plus))
+    # zipl = list(enumerate(million10_plus))
     # print(zipl[-2:])
     assert has_fixed(million10_plus) == 15_999_999
 
 
-def test_for_ten_million_plus_edge_case():
+def test_for_ten_million_plus_edge_case_at_the_start():
     """ """
     million10 = list(range(1, 17_000_000))
     m2 = [0] + million10
