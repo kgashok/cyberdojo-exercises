@@ -83,8 +83,6 @@ def level_order(root):
 
         if node:
             res.append(node.data)
-
             queue.extend([node.left, node.right])
 
-    print(res)
     return res
