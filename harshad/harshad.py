@@ -7,6 +7,11 @@
 
 
 def sum_digits(n):
+    """
+
+    :param n: 
+
+    """
     return sum(int(x) for x in str(n))
 
 # -------------------
@@ -16,6 +21,11 @@ def sum_digits(n):
 
 
 def is_prime(n):
+    """
+
+    :param n: 
+
+    """
     import math
 
     for i in range(2, int(math.sqrt(n))+1):
@@ -29,7 +39,13 @@ def is_prime(n):
 
 
 class Harshad:
+    """ """
     def check(self, n):
+        """
+
+        :param n: 
+
+        """
         return (n % sum_digits(n) == 0)
 
 # -------------------
@@ -38,6 +54,12 @@ class Harshad:
 
 
 class StrongHarshad (Harshad):
+    """ """
 
     def check(self, n):
+        """
+
+        :param n: 
+
+        """
         return Harshad.check(self, n) and is_prime(n/sum_digits(n))
