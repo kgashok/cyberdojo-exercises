@@ -2,6 +2,11 @@ from collections import OrderedDict
 
 
 def remove_duplicates_inplace(seq):
+    """
+
+    :param seq: 
+
+    """
     seen = {}
     pos = 0
     for item in seq:
@@ -13,6 +18,11 @@ def remove_duplicates_inplace(seq):
 
 
 def remove_duplicates(alst):
+    """
+
+    :param alst: 
+
+    """
     # from stackoverflow
     return [
         item
