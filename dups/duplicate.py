@@ -1,16 +1,18 @@
 from collections import OrderedDict
+
+
 def remove_duplicates(alst):
-    return [ 
+    return [
         item
         for pos, item in enumerate(alst)
         if alst.index(item) == pos
     ]
 
     #adict = dict()
-    #return list(adict.fromkeys(alst))
+    # return list(adict.fromkeys(alst))
 
-    #return sorted(list(set(alst)))
-    
+    # return sorted(list(set(alst)))
+
     '''
     nlst = []
     for elem in alst: 
@@ -19,7 +21,7 @@ def remove_duplicates(alst):
         
     return nlst 
     '''
-    
+
     #nlst = [i for j, i in enumerate(alst) if i not in alst[:j]]
     '''
     nlst = [
@@ -28,13 +30,12 @@ def remove_duplicates(alst):
     ]
     return nlst 
     '''
-    
+
     #nlst = list(OrderedDict.fromkeys(alst))
-    #return nlst
+    # return nlst
 
     #alst[:] = OrderedDict.fromkeys(alst)
-    #return alst
-    
+    # return alst
 
     '''
     alst.sort()
@@ -54,8 +55,4 @@ def remove_duplicates(alst):
         i += count 
         
     return alst 
-    '''                
-                    
-                    
-                
-                
+    '''
