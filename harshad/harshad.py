@@ -40,6 +40,7 @@ def is_prime(n):
 
 class Harshad:
     """ """
+
     def check(self, n):
         """
 
