@@ -1,10 +1,10 @@
-from collections import OrderedDict
+# from collections import OrderedDict
 
 
 def remove_duplicates_inplace(seq):
     """
 
-    :param seq: 
+    :param seq: array of numbers
 
     """
     seen = {}
@@ -20,7 +20,7 @@ def remove_duplicates_inplace(seq):
 def remove_duplicates(alst):
     """
 
-    :param alst: 
+    :param alst: list of numbers
 
     """
     # from stackoverflow
@@ -45,10 +45,10 @@ def remove_duplicates(alst):
     # by Dayanand, improved by Sagar
     '''
     nlst = []
-    for elem in alst: 
+    for elem in alst:
         if elem not in nlst:
             nlst.append(elem)
-    return nlst 
+    return nlst
     '''
 
     # suggested by Sagar
@@ -56,7 +56,7 @@ def remove_duplicates(alst):
     '''
     nlst = [
         elem
-        for pos, elem in enumerate(alst) 
+        for pos, elem in enumerate(alst)
         if elem not in alst[:pos]
     ]
     return nlst
@@ -71,15 +71,15 @@ def remove_duplicates(alst):
     for i in range(len(alst)-1):
         count = 0
         for j in range(i+1, len(alst)-1):
-            if alst[i] == alst[j]: 
+            if alst[i] == alst[j]:
                 count += 1
         if count != 0:
             for j in range(count):
                 for k in range(i, len(alst)-1):
                     alst[k] = alst[k+1]
-                if j == 0: 
+                if j == 0:
                     del alst[len(alst)-1:]
-                else: 
+                else:
                     del alst[len(alst)-j:]
         i += count
     return alst

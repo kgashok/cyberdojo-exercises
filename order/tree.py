@@ -51,7 +51,7 @@ def boustrophedon_order(root):
     return boustro
 
 
-def boustrophedon_order(root):
+def boustrophedon_order_alt(root):
     level = []  # intermediary level values
     result = []  # accumulates values for all levels
     q = [root]
