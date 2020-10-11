@@ -2,20 +2,20 @@ from collections import OrderedDict
 
 
 def remove_duplicates(alst):
-    # from stackoverflow 
+    # from stackoverflow
     return [
         item
         for pos, item in enumerate(alst)
         if alst.index(item) == pos
     ]
 
-    # suggested by BA 
+    # suggested by BA
     # overhead of creating a dictionary and then converting
     # to a list
     # adict = dict()
     # return list(adict.fromkeys(alst))
 
-    # suggested by Tarun 
+    # suggested by Tarun
     # will not maintain order
     # costly because of sorting
     # return sorted(list(set(alst)))
