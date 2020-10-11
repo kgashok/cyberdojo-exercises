@@ -20,7 +20,7 @@ def test_list_with_one_duplicate():
 
     arr = [100, 100, 4, 3, 2]
     # arr.sort()
-    #assert remove_duplicates(arr) == arr
+    # assert remove_duplicates(arr) == arr
 
     assert remove_duplicates(arr) == [100, 4, 3, 2]
 
