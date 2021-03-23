@@ -16,11 +16,7 @@ def binary_search(alist, token):
             # if token is 7 and midval is 5...
             # shift left marker to the right of mid
             left = mid + 1
-<<<<<<< HEAD
         else: # if token < midvalue
-=======
-        else:
->>>>>>> 1414ddfd8d46e0ef75eb7bac82ee78efc71d9a7f
             right = mid - 1
 
     print("Token", token, "Not found!")
