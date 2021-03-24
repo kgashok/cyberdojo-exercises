@@ -18,7 +18,7 @@ def alist():
         (alist, 9, True),
         (alist, 4, False),
         (alist, 12, False)
-        ], indirect=["alist"]
+    ], indirect=["alist"]
 )
 def test_finding_token_in_sample_list(alist, token, expected):
     assert binary_search(alist, token) is expected
