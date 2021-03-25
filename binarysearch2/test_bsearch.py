@@ -8,7 +8,7 @@ def test_finding_5_in_list__1_3_5_7_9():
     assert binary_search(alist, 5) is True
 
 
-#@pytest.mark.skip
+# @pytest.mark.skip
 def test_not_finding_4_in_list__1_3_5_7_9():
     alist = [1, 3, 5, 7, 9]
     assert binary_search(alist, 4) is False
