@@ -15,3 +15,15 @@ def binary_search(alist, token):
             alist = alist[mid + 1:]
 
     return False
+
+def binary_search(alist, token): 
+    while alist: 
+        mid = len(alist) // 2
+        midvalue = alist[mid]
+    
+        if token is midvalue: 
+            return True
+        
+        alist = alist[:mid] if token < midvalue else \
+            alist[mid+1:]
+    return False
