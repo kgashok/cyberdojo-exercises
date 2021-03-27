@@ -19,7 +19,7 @@ def binary_search(alist, token):
 
 # Using ternary operator
 # to make the code even shorter
-def binary_search(alist, token):
+def binary_search2(alist, token):
     while alist:
         mid = len(alist) // 2
         midvalue = alist[mid]

@@ -1,5 +1,5 @@
 from bsearch import binary_search
-import pytest
+# import pytest
 
 
 def test_finding_5_in_list__1_3_5_7_9():
