@@ -17,7 +17,7 @@ def binary_search(alist, token):
     return False
 
 
-# Using ternary operator 
+# Using ternary operator
 # to make the code even shorter
 def binary_search(alist, token):
     while alist:
