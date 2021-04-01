@@ -56,7 +56,7 @@ def test_reversing_dict_containing_list_as_value_with_duplicates():
          {2: [1, 2, 4], 3: [2, 4], 4:2, 5:4}),
     ]
 )
-def test_reversing_dict_containing_list_as_value_with_multiple_dups(adict, expected):
+def test_reverse_containing_list_as_value_with_multiple_dups(adict, expected):
     assert reverse_dict(adict) == expected
 
 
@@ -70,5 +70,5 @@ def test_reversing_dict_containing_list_as_value_with_multiple_dups(adict, expec
          {2: [1, 2, 100], 0:[2, 2, 2], 3:2}),
     ]
 )
-def test_reversing_dict_containing_list_as_value_with_multiple_dups(adict, expected):
+def test_reversing_to_collect_all_multiple_dups(adict, expected):
     assert reverse_dict2(adict) == expected

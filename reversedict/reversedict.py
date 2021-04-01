@@ -22,14 +22,14 @@ def update(d, k, v):
 def reverse_dict2(adict):
     res = dict()
     for key, value in adict.items():
-        print(f'key:{key}, value:{value}')
+        # print(f'key:{key}, value:{value}')
         if type(value) is not list:
             update(res, value, key)
         else:
             ldict = dict()
             for elem in value:
                 update(ldict, elem, key)
-            print(f'ldict:{ldict}')
+            # print(f'ldict:{ldict}')
             for k, v in ldict.items():
                 update(res, k, v)
         print(f"---> INTER:{res}")
