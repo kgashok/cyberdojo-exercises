@@ -10,8 +10,8 @@ def update(d, k, v):
         try:
             # if v is a single value
             insort(d[k], v)
-        except:
-            # if v is a list of values
+        except TypeError:
+            # then it must be a list of values
             for elem in v:
                 insort(d[k], elem)
 
