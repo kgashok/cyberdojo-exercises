@@ -12,9 +12,8 @@ def update(d, k, v):
             insort(d[k], v)
         except TypeError as e:
             # then v must be a list of values
-            error_string = str(e)
-            if "list" in error_string and "int" in error_string:
-                print("-->> Handling list of values...", v)
+            print(str(e))
+            print("-->> Handling list of values...", v)
             for elem in v:
                 insort(d[k], elem)
 

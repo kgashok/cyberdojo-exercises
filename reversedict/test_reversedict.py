@@ -68,6 +68,8 @@ def test_reverse_containing_list_as_value_with_multiple_dups(adict, expected):
          {2: [1, 2, 4], 3: [2, 4], 4:2, 5:[4, 4, 100]}),
         ({1: 2, 2: [2, 0, 0, 0, 3], 100:2},
          {2: [1, 2, 100], 0:[2, 2, 2], 3:2}),
+        ({1: 2, 0: 3, 2: [2, 3, 4, 5, 2, 2, 3]},
+         {2: [1, 2, 2, 2], 3:[0, 2, 2], 4:2, 5:2}),
     ]
 )
 def test_reversing_to_collect_all_multiple_dups(adict, expected):
