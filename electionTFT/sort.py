@@ -24,19 +24,20 @@ def insert_into_sorted_array(alist, key, index):
         index -= 1
     alist[index] = key
 
-
+    
 def insert_into_sorted_array(alist, key, kindex):
     j = kindex
     while j > 0 and key < alist[j-1]:
         j -= 1
-
-    if j != kindex:
-        print("\nBefore shift:", alist)
-        alist[j+1:kindex+1] = alist[j:kindex]
-        print("After shift:", alist)
-        alist[j] = key
-        print("After insertion", alist)
-
+    
+    print("\nBefore shift:", alist)
+    # shift right by 1 position, (kindex-j) elements
+    alist[j+1:kindex+1] = alist[j:kindex]
+    print("After shift:", alist)
+    # insert key into the array 
+    alist[j] = key
+    print("After insertion", alist)
+  
 
 def insertion_sort(alist):
     for i in range(1, len(alist)):
