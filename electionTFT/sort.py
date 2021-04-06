@@ -11,7 +11,7 @@ def insert_into_sorted_array(alist, key, index):
     while index > 0 and key < alist[index-1]:
         # alist[index] = alist[index-1]
         index -= 1
-    #alist[index] = key
+    # alist[index] = key
     print("before", alist, key, index)
     alist.insert(index, key)
     print("after", alist)
@@ -30,13 +30,13 @@ def insert_into_sorted_array(alist, key, kindex):
     while j > 0 and key < alist[j-1]:
         j -= 1
 
-    print("\nBefore shift:", alist)
+    # print("\nBefore shift:", alist)
     # shift right by 1 position, (kindex-j) elements
     alist[j+1:kindex+1] = alist[j:kindex]
-    print("After shift:", alist)
+    # print("After shift:", alist)
     # insert key into the array
     alist[j] = key
-    print("After insertion", alist)
+    # print("After insertion", alist)
 
 
 def insertion_sort(alist):
