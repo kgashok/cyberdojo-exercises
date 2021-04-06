@@ -39,17 +39,31 @@ def insert_into_sorted_array(alist, key, kindex):
     # print("After insertion", alist)
 
 
-def insert_into_sorted_array(alist, key, kindex):
-    j = kindex
+def insert_into_sorted_array(alist, key, index):
+    j = index
     while j > 0 and key < alist[j-1]:
         j -= 1
-
-    alist[j+1:kindex+1] = alist[j:kindex]
+    
+    alist[j+1:index+1] = alist[j:index]
     alist[j] = key
-
+    
 
 def insertion_sort(alist):
     for i in range(1, len(alist)):
         key = alist[i]
         insert_into_sorted_array(alist, key, i)
+    return alist
+
+
+def insertion_sort(alist):
+    for idx in range(1, len(alist)):
+        # pick a key from specific location
+        key = alist[idx]
+        # insert the key into the sorted subarray
+        j = idx
+        while j > 0 and key < alist[j-1]:
+            j -= 1    
+        alist[j+1:idx+1] = alist[j:idx]  
+        alist[j] = key 
+        
     return alist
