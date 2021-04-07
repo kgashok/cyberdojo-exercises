@@ -42,7 +42,7 @@ def insert_into_sorted_array(alist, key, kindex):
 def insert_into_sorted_array(alist, key, index):
     j = index
     while j > 0 and key < alist[j-1]:
-        j -= 1
+        j -= 1  
 
     alist[j+1:index+1] = alist[j:index]
     alist[j] = key
