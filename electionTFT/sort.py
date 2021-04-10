@@ -67,3 +67,19 @@ def insertion_sort(alist):
         alist[j] = key
 
     return alist
+
+
+# from Krishnapriya's refactor
+def ins_sort(alist):
+    for i in range(1, len(alist)):
+        j = i
+        # select a key,
+        key = alist[j]
+        # find the index to insert at,
+        while j and key < alist[j-1]:
+            j -= 1
+        # shift elements right by 1 location and
+        alist[j+1:i+1] = alist[j:i]
+        # insert key into sorted subarray
+        alist[j] = key
+    return alist
