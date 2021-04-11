@@ -73,13 +73,15 @@ def insertion_sort(alist):
 def ins_sort(alist):
     for i in range(1, len(alist)):
         j = i
-        # select a key,
+        # select a key from a location,
         key = alist[j]
         # find the index to insert at,
         while j and key < alist[j-1]:
             j -= 1
-        # shift elements right by 1 location and
-        alist[j+1:i+1] = alist[j:i]
-        # insert key into sorted subarray
-        alist[j] = key
+        # and if chosen index is different,
+        if i != j:
+            # shift elements right by 1 location and
+            alist[j+1:i+1] = alist[j:i]
+            # insert key into sorted subarray
+            alist[j] = key
     return alist

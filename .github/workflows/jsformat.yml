@@ -1,5 +1,5 @@
 # Example workflow
-name: Format
+name: Formatter
 
 on:
   push:
@@ -7,7 +7,9 @@ on:
       - master
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
-    - uses: sane-fmt/action@master
+  
+  jsformatting: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: sane-fmt/action@master
