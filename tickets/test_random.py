@@ -32,16 +32,14 @@ def exp_func(peopleline):
         else:
             bills[bill] += 1
 
-        if bill is 25:
-            continue
-        if bill is 30:
+        if bill == 30:
             bills[5] -= 1
             if bills[5] < 0:
                 return "No"
-        if bill is 50:
+        if bill == 50:
             if not isChangeAble(waysToMake25):
                 return "No"
-        if bill is 100:
+        if bill == 100:
             if not isChangeAble(waysToMake75):
                 return "No"
         # print(bills)  # intermediate cashbox status
@@ -71,7 +69,7 @@ def test_random_lists():
         ]
 
         expected = exp_func(alist)
-        if len(alist) is 20 or len(alist) is 200:  # and expected == "Yes":
+        if len(alist) == 20 or len(alist) == 200:  # and expected == "Yes":
             print(("Test_" + str(test_num), alist, len(alist), exp_func(alist)),
                   end="...\n"
                   )

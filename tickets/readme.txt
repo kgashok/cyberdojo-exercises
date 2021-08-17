@@ -35,3 +35,6 @@ SPOILER ALERT!
 http://j.mp/numberPartitions
 http://j.mp/kenOnoNumberPartitions
 
+
+BIG SPOILER ALERT!
+https://cyber-dojo.org/kata/edit/H76But 
