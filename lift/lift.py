@@ -12,6 +12,6 @@ class Lift:
                 desired = stop_level
                 minimum = dist
 
-        print ("minimum: ", minimum, "desired: ", desired)
+        print("minimum: ", minimum, "desired: ", desired)
 
         return desired
