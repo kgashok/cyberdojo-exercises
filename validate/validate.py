@@ -13,10 +13,10 @@ def validate(number):
             digits_to_double)
     )
     total += sum(other_digits)
-    # print("total without check_digit", total)
+    mod10 = total % 10
 
-    correct_check = 0 if not total % 10 and check_digit else \
-        10 - (total % 10) if (total + check_digit) % 10 else \
+    correct_check = 10 - mod10 if (total + check_digit) % 10 else \
+        0 if mod10 == 0 and check_digit else \
         None
     check_string = " " + str(correct_check)
 
