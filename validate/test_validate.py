@@ -1,5 +1,5 @@
-from validate import *
 import pytest
+from validate import validate
 
 
 def test_for_valid():
