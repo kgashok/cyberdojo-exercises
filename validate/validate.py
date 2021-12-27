@@ -9,10 +9,8 @@ def validate(number):
     # print(digits_to_double, other_digits, check_digit)
 
     total = sum(
-        map(
-            lambda digit: sum(int(i) for i in str(digit*2)),
-            digits_to_double
-        )
+        map(lambda digit: sum(int(i) for i in str(digit*2)),
+            digits_to_double)
     )
     total += sum(other_digits)
     # print("total without check_digit", total)
