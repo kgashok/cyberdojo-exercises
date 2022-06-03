@@ -1,0 +1,45 @@
+#CXXFLAGS += -I. -std=c++17 -Wall -Wextra -Werror
+#CFLAGS += -I. -std=c11 -Wall -Wextra -Werror
+CXXFLAGS += -I. -std=c++17 -Wall -Wextra -Wno-unused-result
+CFLAGS += -I. -std=c11 -Wall -Wextra -Wno-unused-result
+GTEST_LIBS = -lgtest -lgtest_main -pthread
+
+HPP_FILES = $(wildcard *.hpp)
+COMPILED_HPP_FILES = $(patsubst %.hpp,%.compiled_hpp,$(HPP_FILES))
+CPP_FILES = $(wildcard *.cpp)
+COMPILED_CPP_FILES = $(patsubst %.cpp,%.o,$(CPP_FILES))
+
+H_FILES = $(wildcard *.h)
+COMPILED_H_FILES = $(patsubst %.h,%.compiled_h,$(H_FILES))
+C_FILES = $(wildcard *.c)
+COMPILED_C_FILES = $(patsubst %.c,%.o,$(C_FILES))
+
+.PHONY: test.output
+test.output: test makefile
+#	@./$< --gtest_shuffle
+	@./$<
+
+test: makefile $(COMPILED_CPP_FILES) $(COMPILED_C_FILES) $(COMPILED_HPP_FILES)
+	@$(CXX) $(CXXFLAGS) -O $(COMPILED_CPP_FILES) $(COMPILED_C_FILES) $(GTEST_LIBS) -o $@
+
+%.o: %.cpp
+	@$(CXX) -c $(CXXFLAGS) -O $< -o $@
+
+%.o: %.c
+	@$(CC) -c $(CFLAGS) -O $< -o $@
+
+# This rule ensures header files build in their own right.
+# The quality of header files is important because header files
+# are #included from other files and thus have a large span
+# of influence (unlike .cpp files which are not #included)
+
+%.compiled_hpp: %.hpp
+	@$(CXX) -x c++ $(CXXFLAGS) -c -o $@ $<
+
+
+%.compiled_h: %.h
+	@$(C) -x c $(CFLAGS) -c -o $@ $<
+
+
+clean:
+	rm -f main.o _utils.o timing.o main /test
