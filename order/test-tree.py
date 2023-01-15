@@ -46,3 +46,11 @@ def test_simple_level_order_output():
     root.right = Node(3)
 
     assert level_order(root) == [1, 2, 3]
+
+
+def test_level_order_output(): 
+    root = Node(1)
+    root.left = Node(3)
+    root.left.left = Node(2)
+
+    assert level_order(root) == [1, 3, 2]
