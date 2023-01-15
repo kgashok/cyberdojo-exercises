@@ -1,7 +1,7 @@
 from solution import *
 
 import pytest
-#pytestmark = pytest.mark.skipif()
+# pytestmark = pytest.mark.skipif()
 
 
 def test_partitioning_of_25_and_75():

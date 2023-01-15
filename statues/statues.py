@@ -6,12 +6,12 @@ class Statues:
 
         # Arrive at the equalizing value
         total = sum(slist)
-        print ("Total: ", total)
+        print("Total: ", total)
         equal = int(total / no_of_rooms)
-        print ("Equal value: ", equal)
+        print("Equal value: ", equal)
 
         steps = sum([(equal-e) for e in slist if equal > e])
-        print (steps)
+        print(steps)
 
         return steps
 
@@ -28,9 +28,9 @@ class Statues:
 
         # Arrive at the equalizing value
         total = sum(slist)
-        print ("Total: ", total)
+        print("Total: ", total)
         equal = int(total / no_of_rooms)
-        print ("Equal value: ", equal)
+        print("Equal value: ", equal)
 
         steps = 0
         inventory = 0
@@ -49,6 +49,6 @@ class Statues:
                     slist[i] = equal
                     steps += 1
 
-            print ("Steps: ", steps, inventory, slist)
+            print("Steps: ", steps, inventory, slist)
 
         return steps-1

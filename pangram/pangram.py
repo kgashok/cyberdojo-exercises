@@ -7,5 +7,5 @@ class Checker:
             if i.isalpha():
                 alpha.add(i)
 
-        print (alpha, len(alpha))
+        print(alpha, len(alpha))
         return len(alpha) == 26

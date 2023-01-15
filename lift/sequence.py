@@ -8,6 +8,6 @@ def generate(n):
         start += start + (i % 2 if i % 2 == 1 else -1)
         out.append(start)
 
-    print (out)
+    print(out)
 
     return out
