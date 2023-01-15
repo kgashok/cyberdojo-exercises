@@ -1015,5 +1015,5 @@
       define("underscore", [], function () {
         return m;
       });
-}.call(this));
+}).call(this);
 //# sourceMappingURL=underscore-min.map
