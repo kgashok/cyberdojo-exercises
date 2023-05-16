@@ -1,0 +1,26 @@
+Airbnb Rotator
+ 
+    This problem was asked by Airbnb.
+ 
+    Given a linked list and a positive integer k, rotate the list to the right by k places.
+ 
+    For example, given the linked list 7 -> 7 -> 3 -> 5 and k = 2, 
+                      it should become 3 -> 5 -> 7 -> 7.
+ 
+    Given the linked list 1 -> 2 -> 3 -> 4 -> 5 and k = 3, 
+         it should become 3 -> 4 -> 5 -> 1 -> 2.
+ 
+    Example
+    3 1 5 6 7 -> [6, 7, 5] // shift by 1
+ 
+    4 2 11 22 33 44 -> [33, 44, 11, 22] // shift by 2
+ 
+    rotate_linked_list
+ 
+    Write the code to define the function that will accept two arguments:
+ 
+    - a linked list node which points to the beginning of a linked list and
+    - a integer value indicating by how many times the list is to be rotated.
+      If this value is not provided, then default it to a value of 1
+ 
+    The function must return the Node which points to the rotated linked list.
