@@ -23,6 +23,7 @@ public class FizzBuzz {
   public void addFilter(Filter f) {
     filters.add(f);
   }
+
   // http://www.javatpoint.com/Sorting-in-collection-framework
 
   public void sortFilter() {
