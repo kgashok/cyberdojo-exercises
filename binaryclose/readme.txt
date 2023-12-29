@@ -1,33 +1,9 @@
-
-Config files
-Recent
-All
-
-
-
-
-
-
-
-Submissions
-0
-17
-Switch submission
-
-AS
-
-Ashok B
-Ashok B
-In progress
-(not submitted)
-Forked 21st Dec
-
-Mark as reviewed
-Return to submissions
 Instructions
-The function that implements a binary search in Python is given in the main.py file. It returns bool True if found, and bool False if not found.
+The function that implements a binary search in Python is given in the main.py file. 
+It returns bool True if found, and bool False if not found.
 
 Find the Closest
+
 Modify the code to return the number that is closest to the searched number in the list.
 
 If the exact number exists in the list, return the number, as is.
